@@ -1,0 +1,36 @@
+<head>
+  <title>pickle_jam</title>
+</head>
+
+<body>
+  {{> picklejam}}
+</body>
+
+<template name="picklejam">
+  {{#unless selected_pad}}
+  <div class="none">Click a pad to select</div>
+  {{/unless}}
+ <div class="jamboard">
+    {{#each pads}}
+      {{> pad}}
+    {{/each}}
+  </div>
+
+  <div class="details">
+    {{> pad_edit }}
+  </div>
+
+</template>
+
+
+<template name="pad_edit">
+  <div class="pad-edit">
+    <textarea id="pad-text" rows="4" cols="50">{{text}}</textarea>
+  </div>
+</template>
+
+<template name="pad">
+  <div class="pad {{selected}}">
+    <span class="name">{{name}}</span>
+  </div>
+</template>
